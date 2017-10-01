@@ -21,6 +21,7 @@ public class AppManager : OGSingleton<AppManager>
     public UIEvents ui { get; protected set; }
     public OGInput input { get; protected set; }
 
+    public TGCConnectionController neurosky;
 
 	private void Awake()
 	{

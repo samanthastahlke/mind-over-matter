@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4107278254139558}
   - component: {fileID: 114970561253437168}
   - component: {fileID: 114786499554734956}
+  - component: {fileID: 114599692415270166}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -41,6 +42,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114599692415270166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456035308252718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fad3d159c0b754fb16a7ac070f1084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poorSignal: 0
+  attention: 0
+  meditation: 0
 --- !u!114 &114786499554734956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e089f42b1195c48a8a0d524965680d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  neurosky: {fileID: 114599692415270166}
 --- !u!114 &114970561253437168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,3 +81,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   proxyFocusAxis: ProxyFocus
   proxyBlinkButton: space
+  useNeurosky: 0
+  useTobii: 0

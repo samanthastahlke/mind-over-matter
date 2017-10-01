@@ -15,6 +15,7 @@ public class MainHUD : OGSingleton<MainHUD>
     [Header("Debugging")]
     public Text debugFocus;
     public GameObject winrar;
+    public RectTransform cursor;
 
     private static OGInput input;
 
@@ -22,6 +23,8 @@ public class MainHUD : OGSingleton<MainHUD>
     {
         if (input == null)
             input = OGInput.instance;
+
+        Cursor.visible = false;
     }
 
     void Update()
@@ -29,6 +32,7 @@ public class MainHUD : OGSingleton<MainHUD>
         if(debugMode)
         {
             debugFocus.text = input.GetScaledFocusLevel().ToString("0.00");
+            cursor.anchoredPosition = input.GetTrackingPosition();
         }
     }
 

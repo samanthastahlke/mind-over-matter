@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tobii.Gaming;
 
 /*
 OGInput.cs
@@ -27,10 +28,17 @@ public class OGInput : OGSingleton<OGInput>
     public string proxyFocusAxis;
     public string proxyBlinkButton;
 
+    public bool useNeurosky = false;
+    public bool useTobii = false;
+
+    TGCConnectionController neurosky;
+
     void Awake()
     {
         focusInputType = FocusInputType.PROXY;
         trackingInputType = TrackingInputType.PROXY;
+
+        neurosky = AppManager.instance.neurosky;
     }
 
     public bool StrongBlinkDown()
@@ -40,13 +48,17 @@ public class OGInput : OGSingleton<OGInput>
 
     public float GetScaledFocusLevel()
     {
-        //Proxy placeholder until we have equipment to test.
+        if(useNeurosky)
+            return (float)neurosky.attention / 100.0f;
+
         return Mathf.Clamp(Input.GetAxis(proxyFocusAxis), 0.0f, 1.0f);
     }
 
     public Vector3 GetTrackingPosition()
     {
-        //Proxy placeholder until we have equipment to test.
+        if(useTobii)
+            return TobiiAPI.GetGazePoint().Screen;
+
         return Input.mousePosition;
     }
 }
