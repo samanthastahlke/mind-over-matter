@@ -35,8 +35,10 @@ public class OGInput : OGSingleton<OGInput>
 
     void Awake()
     {
-        focusInputType = FocusInputType.PROXY;
-        trackingInputType = TrackingInputType.PROXY;
+        focusInputType = useNeurosky ? FocusInputType.NEUROSKY : FocusInputType.PROXY;
+        trackingInputType = useTobii ? TrackingInputType.TOBII : TrackingInputType.PROXY;
+
+        Cursor.visible = !useTobii;
 
         neurosky = AppManager.instance.neurosky;
     }

@@ -32,9 +32,9 @@ public class TGCConnectionController : MonoBehaviour {
 
     private bool connected = false;
 
-    public int poorSignal;
-    public int attention;
-    public int meditation;
+    public int signalStrength { get; protected set; }
+    public int attention { get; protected set; }
+    public int meditation { get; protected set; }
 
 	void Start()
     {
@@ -81,7 +81,9 @@ public class TGCConnectionController : MonoBehaviour {
 	          IDictionary primary = (IDictionary)JsonConvert.Import(typeof(IDictionary), packet);
 	
 	          if(primary.Contains("poorSignalLevel"))
-              {	
+              {
+                signalStrength = (int.Parse(primary["poorSignalLevel"].ToString()));
+
 				if(UpdatePoorSignalEvent != null)
 				   UpdatePoorSignalEvent(int.Parse(primary["poorSignalLevel"].ToString()));
 						
@@ -89,6 +91,7 @@ public class TGCConnectionController : MonoBehaviour {
                 {
 	              IDictionary eSense = (IDictionary)primary["eSense"];
                   attention = int.Parse(eSense["attention"].ToString());
+                  meditation = int.Parse(eSense["meditation"].ToString());
                   if (UpdateAttentionEvent != null){
                      UpdateAttentionEvent(attention);
 				   }		

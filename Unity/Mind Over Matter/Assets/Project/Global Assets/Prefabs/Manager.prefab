@@ -68,6 +68,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neurosky: {fileID: 114599692415270166}
+  focusColor:
+    serializedVersion: 2
+    key0: {r: 0, g: 0.5034485, b: 1, a: 1}
+    key1: {r: 0, g: 0.5034485, b: 1, a: 1}
+    key2: {r: 1, g: 0, b: 0, a: 0}
+    key3: {r: 1, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 13107
+    ctime2: 52428
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 2
+  redZone: {r: 1, g: 0.16911763, b: 0.16911763, a: 1}
+  blueZone: {r: 0.19852942, g: 0.60202855, b: 1, a: 1}
+  zoneDepth: 2.1
+  zonePlane: {fileID: 1273857142395966, guid: d117828aeeb7d6d4f8e544677f3b4363, type: 2}
 --- !u!114 &114970561253437168
 MonoBehaviour:
   m_ObjectHideFlags: 1

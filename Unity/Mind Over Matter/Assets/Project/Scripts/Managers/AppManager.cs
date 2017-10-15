@@ -14,6 +14,7 @@ public class AppManager : OGSingleton<AppManager>
     {
         NO_STATE = -10,
         TUTORIAL = 0,
+        TEMPLATE,
         EXIT = 100
     };
 
@@ -22,6 +23,14 @@ public class AppManager : OGSingleton<AppManager>
     public OGInput input { get; protected set; }
 
     public TGCConnectionController neurosky;
+
+    public Gradient focusColor;
+
+    public Color redZone;
+    public Color blueZone;
+
+    public float zoneDepth = -4.0f;
+    public GameObject zonePlane;
 
 	private void Awake()
 	{
@@ -63,17 +72,17 @@ public class AppManager : OGSingleton<AppManager>
 
         switch(newState)
         {
-            case AppState.TUTORIAL:
-
-                state = new GameplayState(this, AppState.TUTORIAL);
-                break;
-
             case AppState.EXIT:
 
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
 #endif
                 Application.Quit();
+                break;
+
+            default:
+
+                state = new GameplayState(this, AppState.TUTORIAL);
                 break;
         }
 

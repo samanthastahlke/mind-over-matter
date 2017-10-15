@@ -16,7 +16,7 @@ public class OGPhysics
         RaycastHit hit;
         Ray testRay = Camera.main.ScreenPointToRay(screenPos);
 
-        if(Physics.Raycast(testRay, out hit, RAY_THRES))
+        if(Physics.Raycast(testRay, out hit, RAY_THRES, LayerMask.NameToLayer("Everything"), QueryTriggerInteraction.Ignore))
         {
             if (hit.collider.gameObject.GetInstanceID() == obj.GetInstanceID())
                 return true;

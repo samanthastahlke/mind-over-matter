@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/Tutorial.unity
     guid: 0d7d8179373fff247b640a6f51456313
+  - enabled: 1
+    path: Assets/Project/Scenes/LevelTemplate.unity
+    guid: ed1ab78c5571d6440beb66fda197e220

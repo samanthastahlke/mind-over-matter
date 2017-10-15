@@ -27,7 +27,8 @@ public class DisplayData : MonoBehaviour
 		
     }
 	
-	void OnUpdatePoorSignal(int value){
+	void OnUpdatePoorSignal(int value)
+    {
 		poorSignal1 = value;
 		if(value < 25){
       		indexSignalIcons = 0;

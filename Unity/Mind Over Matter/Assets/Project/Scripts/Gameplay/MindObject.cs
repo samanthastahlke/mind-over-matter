@@ -13,15 +13,23 @@ public class MindObject : MonoBehaviour
     public float minimumFocusLevel = 0.25f;
     public float maxMoveSpeed = 4.0f;
     public float dampingTime = 0.25f;
+    public float colSpeed = 2.0f;
 
     private Rigidbody rb;
     private static OGInput input;
+    private static AppManager app;
     private static GameplayState state;
 
     private bool hasFocus = false;
+    private bool hasEyes = false;
     private bool fixedPos = false;
     private Vector3 objVel;
     private Vector3 fixedPosTarget;
+
+    private Material mat;
+    private float glowAlpha = 0.0f;
+    private Color col = Color.white;
+    private Vector3 colVel;
 
     void Awake()
     {
@@ -29,12 +37,17 @@ public class MindObject : MonoBehaviour
 
         if (input == null)
             input = OGInput.instance;
+
+        if (app == null)
+            app = AppManager.instance;
+
+        mat = GetComponent<Renderer>().material;
     }
 
     void Start()
     {
         if (state == null)
-            state = (GameplayState)AppManager.instance.state;
+            state = (GameplayState)app.state;
     }
 
     void GainFocus()
@@ -62,8 +75,7 @@ public class MindObject : MonoBehaviour
         }
         else
         {
-            if (input.GetScaledFocusLevel() >= minimumFocusLevel
-                && OGPhysics.ObjectMouseover(input.GetTrackingPosition(), this.gameObject))
+            if (input.GetScaledFocusLevel() >= minimumFocusLevel && hasEyes)
                 GainFocus();
         }
     }
@@ -101,7 +113,30 @@ public class MindObject : MonoBehaviour
     
     void Update() 
     {
+        hasEyes = OGPhysics.ObjectMouseover(input.GetTrackingPosition(), this.gameObject);
+
         if (!fixedPos && (hasFocus || state.focusObject == null))
             CheckFocusChange();
+
+        float targGlowAlpha = (hasEyes || hasFocus) ? 1.0f : 0.0f;
+        Color targColor = (hasFocus) ? app.focusColor.Evaluate(input.GetScaledFocusLevel()) : Color.white;
+
+        Vector3 source = new Vector3(col.r, col.g, col.b);
+        Vector3 dest = new Vector3(targColor.r, targColor.g, targColor.b);
+
+        Vector3 colResult = Vector3.SmoothDamp(source, dest, ref colVel, dampingTime, colSpeed);
+
+        col = new Color(colResult.x, colResult.y, colResult.z);
+
+        float alphaChange = targGlowAlpha - glowAlpha;
+
+        if (Mathf.Abs(alphaChange) > Time.deltaTime * colSpeed)
+            alphaChange = (alphaChange < 0) ? -Time.deltaTime * colSpeed : Time.deltaTime * colSpeed;
+
+        glowAlpha += alphaChange;
+
+        mat.SetColor("_EmissionColor", new Color(glowAlpha, glowAlpha, glowAlpha));
+        mat.SetColor("_Color", col);
+        
     }
 }
