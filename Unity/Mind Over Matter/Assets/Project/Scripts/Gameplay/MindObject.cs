@@ -58,7 +58,7 @@ public class MindObject : MonoBehaviour
         objVel = Vector3.zero;
     }
 
-    void LoseFocus()
+    public void LoseFocus()
     {
         hasFocus = false;
         state.SetFocusObject(null);
@@ -113,21 +113,25 @@ public class MindObject : MonoBehaviour
     
     void Update() 
     {
-        hasEyes = OGPhysics.ObjectMouseover(input.GetTrackingPosition(), this.gameObject);
+        PlayUpdate();
+        OutlineUpdate();
+        ColUpdate();
+    }
 
+    void LateUpdate()
+    {
+        hasEyes = false;
+    }
+
+    protected void PlayUpdate()
+    {
         if (!fixedPos && (hasFocus || state.focusObject == null))
             CheckFocusChange();
+    }
 
+    protected void OutlineUpdate()
+    {
         float targGlowAlpha = (hasEyes || hasFocus) ? 1.0f : 0.0f;
-        Color targColor = (hasFocus) ? app.focusColor.Evaluate(input.GetScaledFocusLevel()) : Color.white;
-
-        Vector3 source = new Vector3(col.r, col.g, col.b);
-        Vector3 dest = new Vector3(targColor.r, targColor.g, targColor.b);
-
-        Vector3 colResult = Vector3.SmoothDamp(source, dest, ref colVel, dampingTime, colSpeed);
-
-        col = new Color(colResult.x, colResult.y, colResult.z);
-
         float alphaChange = targGlowAlpha - glowAlpha;
 
         if (Mathf.Abs(alphaChange) > Time.deltaTime * colSpeed)
@@ -136,7 +140,23 @@ public class MindObject : MonoBehaviour
         glowAlpha += alphaChange;
 
         mat.SetColor("_EmissionColor", new Color(glowAlpha, glowAlpha, glowAlpha));
+    }
+
+    protected void ColUpdate()
+    {      
+        Color targColor = (hasFocus) ? app.focusColor.Evaluate(input.GetScaledFocusLevel()) : Color.white;
+
+        Vector3 source = new Vector3(col.r, col.g, col.b);
+        Vector3 dest = new Vector3(targColor.r, targColor.g, targColor.b);
+
+        Vector3 colResult = Vector3.SmoothDamp(source, dest, ref colVel, dampingTime, colSpeed);
+
+        col = new Color(colResult.x, colResult.y, colResult.z);       
         mat.SetColor("_Color", col);
-        
+    }
+
+    public void GainEyes()
+    {
+        hasEyes = true;
     }
 }

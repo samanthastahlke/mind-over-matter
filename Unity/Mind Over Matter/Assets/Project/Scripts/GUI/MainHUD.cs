@@ -31,6 +31,8 @@ public class MainHUD : OGSingleton<MainHUD>
 
     void Awake()
     {
+        DontDestroyOnLoad(this);
+
         if (input == null)
             input = OGInput.instance;
 

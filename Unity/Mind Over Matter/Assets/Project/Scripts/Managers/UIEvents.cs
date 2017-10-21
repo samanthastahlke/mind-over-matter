@@ -12,7 +12,10 @@ public class UIEvents : OGSingleton<UIEvents>
 {
     public enum UIButtonType
     {
-        UI_NIL = -10
+        UI_NIL = -10,
+        MM_TUTORIAL = 10,
+        MM_PLAY = 20,
+        MM_EXIT = 30
     };
     
     private Dictionary<UIButtonType, bool> btnStates;

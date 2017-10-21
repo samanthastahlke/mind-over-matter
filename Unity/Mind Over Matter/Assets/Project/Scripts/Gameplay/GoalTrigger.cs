@@ -10,9 +10,9 @@ GoalTrigger (c) Ominous Games 2017
 [RequireComponent(typeof(Collider))]
 public class GoalTrigger : MonoBehaviour
 {
-    void OnTriggerEnter(Collider c)
+    void OnCollisionEnter(Collision c)
     {
-        MindObject obj = c.GetComponent<MindObject>();
+        MindObject obj = c.collider.GetComponent<MindObject>();
 
         if(obj != null)
         {

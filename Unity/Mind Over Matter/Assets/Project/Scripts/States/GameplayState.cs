@@ -16,13 +16,13 @@ public class GameplayState : OGState
 
     }
 
-    public override void Init()
-    {
-
-    }
-
     public override AppManager.AppState Update()
     {
+        OGPhysics.CheckMindObjects(app.input.GetTrackingPosition());
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            return AppManager.AppState.LEVEL_SELECT;
+
         return stateID;
     }
 

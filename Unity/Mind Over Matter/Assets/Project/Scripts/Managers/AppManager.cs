@@ -13,8 +13,21 @@ public class AppManager : OGSingleton<AppManager>
     public enum AppState
     {
         NO_STATE = -10,
-        TUTORIAL = 0,
-        TEMPLATE,
+        MAIN_MENU = 0,
+        LEVEL_SELECT,
+        TUTORIAL,
+        L1,
+        L2,
+        L3,
+        L4,
+        L5,
+        L6,
+        L7,
+        L8,
+        L9,
+        L10,
+        L11,
+        L12,
         EXIT = 100
     };
 
@@ -25,12 +38,6 @@ public class AppManager : OGSingleton<AppManager>
     public TGCConnectionController neurosky;
 
     public Gradient focusColor;
-
-    public Color redZone;
-    public Color blueZone;
-
-    public float zoneDepth = -4.0f;
-    public GameObject zonePlane;
 
 	private void Awake()
 	{
@@ -72,6 +79,16 @@ public class AppManager : OGSingleton<AppManager>
 
         switch(newState)
         {
+            case AppState.MAIN_MENU:
+
+                state = new MainMenuState(this, newState);
+                break;
+
+            case AppState.LEVEL_SELECT:
+
+                state = new LevelSelectState(this, newState);
+                break;
+
             case AppState.EXIT:
 
 #if UNITY_EDITOR
@@ -82,7 +99,7 @@ public class AppManager : OGSingleton<AppManager>
 
             default:
 
-                state = new GameplayState(this, AppState.TUTORIAL);
+                state = new GameplayState(this, newState);
                 break;
         }
 

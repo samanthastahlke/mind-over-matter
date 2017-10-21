@@ -24,4 +24,19 @@ public class OGPhysics
 
         return false;
     }
+
+    public static void CheckMindObjects(Vector3 screenPos)
+    {
+        RaycastHit hit;
+        Ray testRay = Camera.main.ScreenPointToRay(screenPos);
+
+        if (Physics.Raycast(testRay, out hit, RAY_THRES, LayerMask.NameToLayer("Everything"), QueryTriggerInteraction.Ignore))
+        {
+            MindObject obj = hit.collider.gameObject.GetComponent<MindObject>();
+
+            if (obj != null)
+                obj.GainEyes();
+        }
+
+    }
 }
