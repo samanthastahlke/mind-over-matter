@@ -53,9 +53,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fad3d159c0b754fb16a7ac070f1084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poorSignal: 0
-  attention: 0
-  meditation: 0
 --- !u!114 &114786499554734956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,10 +94,6 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
-  redZone: {r: 1, g: 0.16911763, b: 0.16911763, a: 1}
-  blueZone: {r: 0.19852942, g: 0.60202855, b: 1, a: 1}
-  zoneDepth: 2.1
-  zonePlane: {fileID: 1273857142395966, guid: d117828aeeb7d6d4f8e544677f3b4363, type: 2}
 --- !u!114 &114970561253437168
 MonoBehaviour:
   m_ObjectHideFlags: 1

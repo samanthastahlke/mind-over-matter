@@ -31,6 +31,8 @@ public class MindObject : MonoBehaviour
     private Color col = Color.white;
     private Vector3 colVel;
 
+    private Vector3 respawnPos;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,12 +44,24 @@ public class MindObject : MonoBehaviour
             app = AppManager.instance;
 
         mat = GetComponent<Renderer>().material;
+
+        respawnPos = transform.position;
     }
 
     void Start()
     {
         if (state == null)
             state = (GameplayState)app.state;
+    }
+
+    public void Respawn()
+    {
+        LoseFocus();
+        transform.position = respawnPos;
+        glowAlpha = 0.0f;
+        col = Color.white;
+        mat.SetColor("_EmissionColor", Color.black);
+        mat.SetColor("_Color", Color.white);
     }
 
     void GainFocus()

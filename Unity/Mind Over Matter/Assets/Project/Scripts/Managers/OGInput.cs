@@ -41,6 +41,9 @@ public class OGInput : OGSingleton<OGInput>
         Cursor.visible = !useTobii;
 
         neurosky = AppManager.instance.neurosky;
+
+        if(useTobii)
+            TobiiAPI.SubscribeGazePointData();
     }
 
     public bool StrongBlinkDown()
@@ -59,7 +62,12 @@ public class OGInput : OGSingleton<OGInput>
     public Vector3 GetTrackingPosition()
     {
         if(useTobii)
-            return TobiiAPI.GetGazePoint().Screen;
+        {
+            if (TobiiAPI.GetGazePoint().IsValid)
+                return TobiiAPI.GetGazePoint().Screen;
+            else
+                return Vector3.zero;
+        }
 
         return Input.mousePosition;
     }

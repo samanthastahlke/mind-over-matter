@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /*
@@ -43,6 +44,12 @@ public class MainHUD : OGSingleton<MainHUD>
         debugGroup.SetActive(debugMode);
     }
 
+    protected override void OnLevelLoad(Scene scene, LoadSceneMode mode)
+    {
+        base.OnLevelLoad(scene, mode);
+        winrar.SetActive(false);
+    }
+
     void Update()
     {
         if(debugMode)
@@ -68,9 +75,6 @@ public class MainHUD : OGSingleton<MainHUD>
 
     public void TriggerWin()
     {
-        if(debugMode)
-        {
-            winrar.SetActive(true);
-        }
+        winrar.SetActive(true);
     }
 }
