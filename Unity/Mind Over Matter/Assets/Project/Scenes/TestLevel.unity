@@ -338,7 +338,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &516742650
 GameObject:
@@ -446,26 +446,8 @@ Transform:
   - {fileID: 1017934119}
   - {fileID: 283092991}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &717206682 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1749088486448136, guid: 35a148e42c35a5e4c836d9b6c1475492,
-    type: 2}
-  m_PrefabInternal: {fileID: 1925127393}
---- !u!114 &717206683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 717206682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f021edbba2c699b438e6867f579a97e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minFocus: 0
-  maxFocus: 1
 --- !u!1 &1017934118
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +594,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1256276707
 Prefab:
@@ -670,7 +652,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4127988763149752, guid: dd25eb46f6c43574bbffba018820aee2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 4127988763149752, guid: dd25eb46f6c43574bbffba018820aee2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -794,11 +776,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114548468152723798, guid: 35a148e42c35a5e4c836d9b6c1475492,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4447767529470106, guid: 35a148e42c35a5e4c836d9b6c1475492, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -831,38 +808,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114548468152723798, guid: 35a148e42c35a5e4c836d9b6c1475492,
+    - target: {fileID: 114824973717291010, guid: 35a148e42c35a5e4c836d9b6c1475492,
         type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[0].value
-      value: 1
+      propertyPath: minFocus
+      value: 0.7
       objectReference: {fileID: 0}
-    - target: {fileID: 114548468152723798, guid: 35a148e42c35a5e4c836d9b6c1475492,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[1].time
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114548468152723798, guid: 35a148e42c35a5e4c836d9b6c1475492,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114548468152723798, guid: 35a148e42c35a5e4c836d9b6c1475492,
-        type: 2}
-      propertyPath: forceVsConcentration.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114548468152723798, guid: 35a148e42c35a5e4c836d9b6c1475492,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[2].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114548468152723798, guid: 35a148e42c35a5e4c836d9b6c1475492,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[2].value
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114548468152723798, guid: 35a148e42c35a5e4c836d9b6c1475492, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35a148e42c35a5e4c836d9b6c1475492, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2106936036
@@ -872,11 +823,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4452254242204350, guid: 2acc18319d750ae46b9e29a24f0ea912, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -911,58 +857,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
         type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[0].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[1].time
+      propertyPath: minFocus
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
         type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[1].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
-        type: 2}
-      propertyPath: forceVsConcentration.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[2].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[2].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[2].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114386699373839342, guid: 2acc18319d750ae46b9e29a24f0ea912,
-        type: 2}
-      propertyPath: forceVsConcentration.m_Curve.Array.data[2].outSlope
-      value: 1
+      propertyPath: maxFocus
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2acc18319d750ae46b9e29a24f0ea912, type: 2}
