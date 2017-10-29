@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 96785185}
   - component: {fileID: 96785184}
   - component: {fileID: 96785183}
+  - component: {fileID: 96785186}
   m_Layer: 0
   m_Name: Top Block
   m_TagString: Untagged
@@ -191,6 +192,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 96785181}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &96785186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96785181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c3e1acdf60d364f8d16fda16d5670d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &133546973 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20511172957002168, guid: 6718b846638b1f746be1854a8648ea5b,
@@ -889,7 +901,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: (3) Now introducing hallways.
+  m_Text: (3) Mind the walls.
 --- !u!222 &1667770193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -907,6 +919,7 @@ GameObject:
   - component: {fileID: 2042904588}
   - component: {fileID: 2042904587}
   - component: {fileID: 2042904586}
+  - component: {fileID: 2042904589}
   m_Layer: 0
   m_Name: Bottom Block
   m_TagString: Untagged
@@ -978,3 +991,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2042904584}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2042904589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2042904584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c3e1acdf60d364f8d16fda16d5670d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

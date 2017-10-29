@@ -149,5 +149,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f021edbba2c699b438e6867f579a97e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minFocus: 0.5
+  minFocus: 0.75
   maxFocus: 1

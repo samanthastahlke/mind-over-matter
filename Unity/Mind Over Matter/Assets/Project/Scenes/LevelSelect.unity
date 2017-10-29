@@ -330,6 +330,11 @@ Prefab:
       propertyPath: m_Text
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
   m_IsPrefabParent: 0
@@ -690,6 +695,11 @@ Prefab:
       propertyPath: m_Text
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
   m_IsPrefabParent: 0
@@ -834,6 +844,11 @@ Prefab:
       propertyPath: m_Text
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
   m_IsPrefabParent: 0
@@ -930,6 +945,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
@@ -1028,6 +1048,11 @@ Prefab:
       propertyPath: m_Text
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
   m_IsPrefabParent: 0
@@ -1119,7 +1144,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1244293061}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.9, y: -2, z: 0}
+  m_LocalPosition: {x: 6.75, y: -2, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 574014608}
@@ -1220,6 +1245,11 @@ Prefab:
       propertyPath: m_Text
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
   m_IsPrefabParent: 0
@@ -1313,6 +1343,11 @@ Prefab:
       propertyPath: m_Name
       value: L1Cube
       objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
   m_IsPrefabParent: 0
@@ -1368,6 +1403,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
@@ -1499,6 +1539,11 @@ Prefab:
       propertyPath: m_Text
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
   m_IsPrefabParent: 0
@@ -1554,6 +1599,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
@@ -1611,6 +1661,11 @@ Prefab:
       propertyPath: m_Text
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}
   m_IsPrefabParent: 0
@@ -1666,6 +1721,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114610543073513406, guid: 5878394a9dadefa4eb934ce22b520bbc,
+        type: 2}
+      propertyPath: minimumHoldFocusLevel
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5878394a9dadefa4eb934ce22b520bbc, type: 2}

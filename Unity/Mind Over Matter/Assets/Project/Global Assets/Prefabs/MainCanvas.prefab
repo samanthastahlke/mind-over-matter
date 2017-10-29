@@ -325,7 +325,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Level Complete!
 
-    Press spacebar to move forward...'
+    Press spacebar or blink to move forward...'
 --- !u!114 &114555658688245404
 MonoBehaviour:
   m_ObjectHideFlags: 1

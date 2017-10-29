@@ -11,9 +11,11 @@ MindObject (c) Ominous Games 2017
 public class MindObject : MonoBehaviour
 {
     public float minimumFocusLevel = 0.25f;
+    public float minimumHoldFocusLevel = 0.25f;
     public float maxMoveSpeed = 4.0f;
     public float dampingTime = 0.25f;
     public float colSpeed = 2.0f;
+    public bool canBePickedUp = true;
 
     private Rigidbody rb;
     private static OGInput input;
@@ -70,6 +72,8 @@ public class MindObject : MonoBehaviour
         state.SetFocusObject(this.gameObject);
         rb.useGravity = false;
         objVel = Vector3.zero;
+
+        rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
     }
 
     public void LoseFocus()
@@ -78,29 +82,28 @@ public class MindObject : MonoBehaviour
         state.SetFocusObject(null);
         rb.useGravity = true;
         objVel = Vector3.zero;
+
+        rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX;
     }
 
     void CheckFocusChange()
     {
         if(hasFocus)
         {
-            if (input.StrongBlinkDown())
+            if (input.StrongBlinkDown() || input.GetScaledFocusLevel() < minimumHoldFocusLevel)
                 LoseFocus();
         }
         else
         {
-            if (input.GetScaledFocusLevel() >= minimumFocusLevel && hasEyes)
+            if (input.GetScaledFocusLevel() >= minimumFocusLevel && hasEyes && canBePickedUp)
                 GainFocus();
         }
     }
 
     public void FixPosition(Vector3 fixedPosTarget)
     {
-        hasFocus = false;
+        LoseFocus();
         fixedPos = true;
-        state.SetFocusObject(null);
-        rb.useGravity = false;
-
         this.fixedPosTarget = fixedPosTarget;
     }
 
@@ -128,6 +131,16 @@ public class MindObject : MonoBehaviour
         }
     }
     
+    public bool IsSelected()
+    {
+        return hasEyes;
+    }
+
+    public bool HasFocus()
+    {
+        return hasFocus;
+    }
+
     void Update() 
     {
         if (app.isPaused)

@@ -150,4 +150,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minFocus: 0
-  maxFocus: 0.5
+  maxFocus: 0.75

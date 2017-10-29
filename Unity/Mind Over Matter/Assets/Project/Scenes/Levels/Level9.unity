@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 303337252}
   - component: {fileID: 303337251}
   - component: {fileID: 303337250}
+  - component: {fileID: 303337253}
   m_Layer: 0
   m_Name: Block3 Top
   m_TagString: Untagged
@@ -530,6 +531,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 303337248}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &303337253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 303337248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c3e1acdf60d364f8d16fda16d5670d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &378535377
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +709,7 @@ GameObject:
   - component: {fileID: 480515967}
   - component: {fileID: 480515966}
   - component: {fileID: 480515965}
+  - component: {fileID: 480515968}
   m_Layer: 0
   m_Name: Block1 Bot
   m_TagString: Untagged
@@ -768,6 +781,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 480515963}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &480515968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 480515963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c3e1acdf60d364f8d16fda16d5670d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &489427044
 Prefab:
   m_ObjectHideFlags: 0
@@ -821,6 +845,7 @@ GameObject:
   - component: {fileID: 721417796}
   - component: {fileID: 721417795}
   - component: {fileID: 721417794}
+  - component: {fileID: 721417797}
   m_Layer: 0
   m_Name: Block1 Top
   m_TagString: Untagged
@@ -892,6 +917,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 721417792}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &721417797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721417792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c3e1acdf60d364f8d16fda16d5670d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &846026253
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +1001,7 @@ GameObject:
   - component: {fileID: 1034716597}
   - component: {fileID: 1034716596}
   - component: {fileID: 1034716595}
+  - component: {fileID: 1034716598}
   m_Layer: 0
   m_Name: Block2 Top
   m_TagString: Untagged
@@ -1036,6 +1073,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1034716593}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1034716598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1034716593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c3e1acdf60d364f8d16fda16d5670d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1201133482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1347,7 @@ GameObject:
   - component: {fileID: 1905157387}
   - component: {fileID: 1905157386}
   - component: {fileID: 1905157385}
+  - component: {fileID: 1905157388}
   m_Layer: 0
   m_Name: Block2 Bot
   m_TagString: Untagged
@@ -1370,6 +1419,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1905157383}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1905157388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1905157383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c3e1acdf60d364f8d16fda16d5670d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1935766502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,6 +1482,7 @@ GameObject:
   - component: {fileID: 2081141847}
   - component: {fileID: 2081141846}
   - component: {fileID: 2081141845}
+  - component: {fileID: 2081141848}
   m_Layer: 0
   m_Name: Block3 Bot
   m_TagString: Untagged
@@ -1493,3 +1554,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2081141843}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2081141848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2081141843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c3e1acdf60d364f8d16fda16d5670d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
