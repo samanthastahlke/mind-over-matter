@@ -23,9 +23,9 @@ public class LevelSelectState : GameplayState
 
     public override AppManager.AppState Update()
     {
-        base.Update();
+        OGPhysics.CheckMindObjects(app.input.GetTrackingPosition());
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || app.ui.GetButton(UIEvents.UIButtonType.PL_QUIT))
             return AppManager.AppState.MAIN_MENU;
 
         if (queuedState != AppManager.AppState.NO_STATE)

@@ -21,12 +21,12 @@ public class GameplayState : OGState
     {
         OGPhysics.CheckMindObjects(app.input.GetTrackingPosition());
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || app.ui.GetButton(UIEvents.UIButtonType.PL_QUIT))
             return AppManager.AppState.LEVEL_SELECT;
 
         if(winState && app.input.StrongBlinkDown())
         {
-            if (stateID == AppManager.AppState.L12)
+            if (stateID >= AppManager.AppState.L12)
                 return AppManager.AppState.LEVEL_SELECT;
             else
                 return stateID + 1;

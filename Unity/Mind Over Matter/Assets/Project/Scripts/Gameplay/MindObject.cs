@@ -106,6 +106,9 @@ public class MindObject : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (app.isPaused)
+            return;
+
         if(hasFocus)
         {
             Vector3 trackPos = input.GetTrackingPosition();
@@ -127,6 +130,9 @@ public class MindObject : MonoBehaviour
     
     void Update() 
     {
+        if (app.isPaused)
+            return;
+
         PlayUpdate();
         OutlineUpdate();
         ColUpdate();
@@ -134,6 +140,9 @@ public class MindObject : MonoBehaviour
 
     void LateUpdate()
     {
+        if (app.isPaused)
+            return;
+
         hasEyes = false;
     }
 

@@ -16,22 +16,27 @@ public class EyeCaster : MonoBehaviour
     private GraphicRaycaster raycaster;
     private EventSystem events;
 
-    public float maxPointerSpeed = 40.0f;
+    public float maxPointerSpeed = 800.0f;
     public float pointerDamp = 0.25f;
     private Vector3 pointerSpeed = Vector3.zero;
     private Vector3 lastFramePointer = Vector3.zero;
+    private static AppManager app;
 
-    void Awake()
+    void OnEnable()
     {
+        app = AppManager.instance;
         input = OGInput.instance;
 
         raycaster = GetComponent<GraphicRaycaster>();
         events = EventSystem.current;
 
-        if (input.trackingInputType == OGInput.TrackingInputType.TOBII)
+        if (input.trackingInputType == OGInput.TrackingInputType.TOBII && app.settings.eyeMenus)
             raycaster.enabled = false;
         else
+        {
+            raycaster.enabled = true;
             this.enabled = false;
+        }
     }
     
     void Update() 
@@ -57,7 +62,18 @@ public class EyeCaster : MonoBehaviour
             Button btn = events.currentSelectedGameObject.GetComponent<Button>();
 
             if (btn != null && input.StrongBlinkDown())
-                btn.onClick.Invoke();              
+                btn.onClick.Invoke();
+
+            Toggle toggle = events.currentSelectedGameObject.GetComponent<Toggle>();
+
+            if (toggle != null && input.StrongBlinkDown())
+            {
+                ped.clickCount = 1;
+                ped.button = PointerEventData.InputButton.Left;
+                toggle.OnPointerClick(ped);
+                toggle.onValueChanged.Invoke(!toggle.isOn);
+            }
+               
         }
     }
 
@@ -71,5 +87,10 @@ public class EyeCaster : MonoBehaviour
 
         if (btn != null)
             btn.Select();
+
+        Toggle toggle = obj.GetComponent<Toggle>();
+
+        if (toggle != null)
+            toggle.Select();
     }
 }

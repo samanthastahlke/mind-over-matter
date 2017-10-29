@@ -25,35 +25,98 @@ public class OGInput : OGSingleton<OGInput>
     public FocusInputType focusInputType { get; protected set; }
     public TrackingInputType trackingInputType { get; protected set; }
 
+    public float strongBlinkTime = 0.25f;
+
     public string proxyFocusAxis;
     public string proxyBlinkButton;
 
-    public bool useNeurosky = false;
-    public bool useTobii = false;
+    private float blinkTimer = 0.0f;
+    private bool blinked = false;
+    private bool blinkFrame = false;
 
     TGCConnectionController neurosky;
+    private static AppSettings settings;
 
     void Awake()
     {
-        focusInputType = useNeurosky ? FocusInputType.NEUROSKY : FocusInputType.PROXY;
-        trackingInputType = useTobii ? TrackingInputType.TOBII : TrackingInputType.PROXY;
+        if (settings == null)
+            settings = AppSettings.instance;
 
-        Cursor.visible = !useTobii;
+        focusInputType = settings.useNeurosky ? FocusInputType.NEUROSKY : FocusInputType.PROXY;
+        trackingInputType = settings.useTobii ? TrackingInputType.TOBII : TrackingInputType.PROXY;
+
+        Cursor.visible = !(settings.useTobii && AppManager.instance.settings.eyeMenus);
 
         neurosky = AppManager.instance.neurosky;
+    }
 
-        if(useTobii)
-            TobiiAPI.SubscribeGazePointData();
+    void Start()
+    {
+        if (settings.useTobii)
+            SetupTobii();
+
+        if (settings.useNeurosky)
+            SetupNeurosky();
+    }
+
+    public void SetupTobii()
+    {
+        TobiiAPI.SubscribeGazePointData();
+    }
+
+    public void SetupNeurosky()
+    {
+        neurosky.Connect();
+    }
+
+    public void DisableTobii()
+    {
+      
+    }
+
+    public void DisableNeurosky()
+    {
+        neurosky.Disconnect();
+    }
+
+    void Update()
+    {
+        if (settings.useTobii)
+        {
+            if (TobiiAPI.GetUserPresence().IsUserPresent())
+            {
+                blinked = false;
+                blinkTimer = 0.0f;
+            }
+            else
+                blinkTimer += Time.deltaTime;
+
+            if(blinkTimer > strongBlinkTime)
+            {
+                if (!blinked)
+                {
+                    blinked = true;
+                    blinkFrame = true;
+                }
+                else
+                    blinkFrame = false;
+            }
+        }
     }
 
     public bool StrongBlinkDown()
     {
-        return Input.GetKeyDown(proxyBlinkButton);
+        return Input.GetKeyDown(proxyBlinkButton) || blinkFrame;
+    }
+
+    public bool EyesClosed()
+    {
+        return blinked;
     }
 
     public float GetScaledFocusLevel()
     {
-        if(useNeurosky)
+        if(settings.useNeurosky)
             return (float)neurosky.attention / 100.0f;
 
         return Mathf.Clamp(Input.GetAxis(proxyFocusAxis), 0.0f, 1.0f);
@@ -61,7 +124,7 @@ public class OGInput : OGSingleton<OGInput>
 
     public Vector3 GetTrackingPosition()
     {
-        if(useTobii)
+        if(settings.useTobii)
         {
             if (TobiiAPI.GetGazePoint().IsValid)
                 return TobiiAPI.GetGazePoint().Screen;

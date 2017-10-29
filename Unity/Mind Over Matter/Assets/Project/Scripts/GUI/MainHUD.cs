@@ -26,6 +26,7 @@ public class MainHUD : OGSingleton<MainHUD>
     public GameObject winrar;
     public RectTransform cursor;
     public Image connectSprite;
+    public GameObject quitButton;
 
     private static OGInput input;
     private static TGCConnectionController neurosky;
@@ -48,6 +49,11 @@ public class MainHUD : OGSingleton<MainHUD>
     {
         base.OnLevelLoad(scene, mode);
         winrar.SetActive(false);
+
+        bool canvasActive = AppManager.instance.state.stateID != AppManager.AppState.MAIN_MENU;
+        quitButton.SetActive(canvasActive);
+        GetComponent<GraphicRaycaster>().enabled = canvasActive;
+        GetComponent<EyeCaster>().enabled = canvasActive;
     }
 
     void Update()

@@ -28,9 +28,11 @@ public class AppManager : OGSingleton<AppManager>
         L10,
         L11,
         L12,
+        TEST,
         EXIT = 100
     };
 
+    public AppSettings settings;
     public OGState state { get; protected set; }
     public UIEvents ui { get; protected set; }
     public OGInput input { get; protected set; }
@@ -38,10 +40,12 @@ public class AppManager : OGSingleton<AppManager>
     public TGCConnectionController neurosky;
 
     public Gradient focusColor;
+    public bool isPaused { get; protected set; }
 
 	private void Awake()
 	{
         DontDestroyOnLoad(this);
+        isPaused = false;
     }
 
     private void Start()
@@ -114,4 +118,9 @@ public class AppManager : OGSingleton<AppManager>
         if (stateID != state.stateID)
             ChangeState(stateID);
 	}
+
+    public void TogglePause(bool paused)
+    {
+        isPaused = paused;
+    }
 }

@@ -8,23 +8,12 @@ public class DisplayData : MonoBehaviour
 	private int indexSignalIcons = 1;
 	
     TGCConnectionController controller;
-
     private int poorSignal1;
-    private int attention1;
-    private int meditation1;
-	
-	private float delta;
 
     void Start()
     {
-		controller = AppManager.instance.neurosky;
-		
+		controller = AppManager.instance.neurosky;		
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
-		controller.UpdateAttentionEvent += OnUpdateAttention;
-		controller.UpdateMeditationEvent += OnUpdateMeditation;
-		
-		controller.UpdateDeltaEvent += OnUpdateDelta;
-		
     }
 	
 	void OnUpdatePoorSignal(int value)
@@ -42,27 +31,16 @@ public class DisplayData : MonoBehaviour
       		indexSignalIcons = 1;
 		}
 	}
-	void OnUpdateAttention(int value){
-		attention1 = value;
-	}
-	void OnUpdateMeditation(int value){
-		meditation1 = value;
-	}
-	void OnUpdateDelta(float value){
-		delta = value;
-	}
-
 
     void OnGUI()
     {
 		GUILayout.BeginHorizontal();
-		
-		
+
         if (GUILayout.Button("Connect"))
         {
             controller.Connect();
         }
-        if (GUILayout.Button("DisConnect"))
+        if (GUILayout.Button("Disconnect"))
         {
             controller.Disconnect();
 			indexSignalIcons = 1;
@@ -72,12 +50,6 @@ public class DisplayData : MonoBehaviour
 		GUILayout.Label(signalIcons[indexSignalIcons]);
 		
 		GUILayout.EndHorizontal();
-
-		
         GUILayout.Label("PoorSignal1:" + poorSignal1);
-        GUILayout.Label("Attention1:" + attention1);
-        GUILayout.Label("Meditation1:" + meditation1);
-		GUILayout.Label("Delta:" + delta);
-
     }
 }

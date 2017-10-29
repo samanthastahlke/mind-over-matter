@@ -34,7 +34,7 @@ public class OGPhysics
         {
             MindObject obj = hit.collider.gameObject.GetComponent<MindObject>();
 
-            if (obj != null)
+            if (obj != null && !OGInput.instance.EyesClosed())
                 obj.GainEyes();
         }
 

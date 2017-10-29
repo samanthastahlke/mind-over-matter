@@ -15,7 +15,9 @@ public class UIEvents : OGSingleton<UIEvents>
         UI_NIL = -10,
         MM_TUTORIAL = 10,
         MM_PLAY = 20,
-        MM_EXIT = 30
+        MM_OPTIONS = 25,
+        MM_EXIT = 30,
+        PL_QUIT = 100
     };
     
     private Dictionary<UIButtonType, bool> btnStates;

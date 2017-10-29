@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4107278254139558}
   - component: {fileID: 114970561253437168}
   - component: {fileID: 114786499554734956}
+  - component: {fileID: 114863513876915288}
   - component: {fileID: 114599692415270166}
   m_Layer: 0
   m_Name: Manager
@@ -64,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e089f42b1195c48a8a0d524965680d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 114863513876915288}
   neurosky: {fileID: 114599692415270166}
   focusColor:
     serializedVersion: 2
@@ -94,6 +96,21 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
+--- !u!114 &114863513876915288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456035308252718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b167e814e0cfb1e44a184f66e28fdb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyeMenus: 0
+  useTobii: 0
+  useNeurosky: 0
+  soundOn: 1
 --- !u!114 &114970561253437168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818b24f469f5c504db82f27ddd61d781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strongBlinkTime: 0.25
   proxyFocusAxis: ProxyFocus
   proxyBlinkButton: space
-  useNeurosky: 0
-  useTobii: 0
