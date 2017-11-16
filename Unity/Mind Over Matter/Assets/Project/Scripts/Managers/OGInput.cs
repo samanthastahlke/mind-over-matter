@@ -62,21 +62,24 @@ public class OGInput : OGSingleton<OGInput>
     public void SetupTobii()
     {
         TobiiAPI.SubscribeGazePointData();
+        trackingInputType = TrackingInputType.TOBII;
     }
 
     public void SetupNeurosky()
     {
         neurosky.Connect();
+        focusInputType = FocusInputType.NEUROSKY;
     }
 
     public void DisableTobii()
     {
-      
+        trackingInputType = TrackingInputType.PROXY;
     }
 
     public void DisableNeurosky()
     {
         neurosky.Disconnect();
+        focusInputType = FocusInputType.PROXY;
     }
 
     void Update()

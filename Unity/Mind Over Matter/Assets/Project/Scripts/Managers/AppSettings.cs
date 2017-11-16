@@ -36,7 +36,7 @@ public class AppSettings : OGSingleton<AppSettings>
     public void ToggleTobii(bool _useTobii)
     {
         useTobii = _useTobii;
-
+        print(useTobii);
         if (useTobii)
             OGInput.instance.SetupTobii();
         else
