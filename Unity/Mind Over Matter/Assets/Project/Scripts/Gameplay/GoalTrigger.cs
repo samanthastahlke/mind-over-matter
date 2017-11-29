@@ -10,6 +10,7 @@ GoalTrigger (c) Ominous Games 2017
 [RequireComponent(typeof(Collider))]
 public class GoalTrigger : MonoBehaviour
 {
+    public bool cheeky = false;
     private static AppManager app;
     public GameObject worldText;
 
@@ -27,6 +28,7 @@ public class GoalTrigger : MonoBehaviour
             obj.FixPosition(transform.position);
             MainHUD.instance.TriggerWin();
             ((GameplayState)app.state).TriggerWinState();
+            SoundManager.instance.PlayLevelEndFX(cheeky);
 
             if (worldText)
                 worldText.SetActive(false);

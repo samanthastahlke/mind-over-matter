@@ -722,15 +722,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 23710581537394080, guid: dd25eb46f6c43574bbffba018820aee2,
+    - target: {fileID: 114859336857346796, guid: dd25eb46f6c43574bbffba018820aee2,
         type: 2}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23710581537394080, guid: dd25eb46f6c43574bbffba018820aee2,
-        type: 2}
-      propertyPath: m_ReceiveShadows
-      value: 0
+      propertyPath: fullFocusHumVolume
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd25eb46f6c43574bbffba018820aee2, type: 2}

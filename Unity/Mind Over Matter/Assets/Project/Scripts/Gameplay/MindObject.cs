@@ -15,7 +15,13 @@ public class MindObject : MonoBehaviour
     public float maxMoveSpeed = 4.0f;
     public float dampingTime = 0.25f;
     public float colSpeed = 2.0f;
+    public float volSpeed = 2.0f;
     public bool canBePickedUp = true;
+
+    public AudioSource hum;
+    public float visibleHumVolume = 0.2f;
+    public float fullFocusHumVolume = 1.0f;
+    private Vector3 volVel;
 
     private Rigidbody rb;
     private static OGInput input;
@@ -64,6 +70,7 @@ public class MindObject : MonoBehaviour
         col = Color.white;
         mat.SetColor("_EmissionColor", Color.black);
         mat.SetColor("_Color", Color.white);
+        hum.volume = 0.0f;
     }
 
     void GainFocus()
@@ -149,6 +156,7 @@ public class MindObject : MonoBehaviour
         PlayUpdate();
         OutlineUpdate();
         ColUpdate();
+        AudioUpdate();
     }
 
     void LateUpdate()
@@ -189,6 +197,18 @@ public class MindObject : MonoBehaviour
 
         col = new Color(colResult.x, colResult.y, colResult.z);       
         mat.SetColor("_Color", col);
+    }
+
+    protected void AudioUpdate()
+    {
+        float targVolume = (hasEyes || hasFocus) ? ((hasFocus) ? input.GetScaledFocusLevel() * fullFocusHumVolume : visibleHumVolume) : 0.0f;
+
+        Vector3 source = new Vector3(hum.volume, hum.volume, hum.volume);
+        Vector3 dest = new Vector3(targVolume, targVolume, targVolume);
+
+        Vector3 volResult = Vector3.SmoothDamp(source, dest, ref volVel, dampingTime, volSpeed);
+
+        hum.volume = volResult.x;
     }
 
     public void GainEyes()

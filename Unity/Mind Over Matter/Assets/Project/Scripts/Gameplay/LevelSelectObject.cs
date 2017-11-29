@@ -15,5 +15,6 @@ public class LevelSelectObject : MindObject
     {
         PlayUpdate();
         OutlineUpdate();
+        AudioUpdate();
     }
 }

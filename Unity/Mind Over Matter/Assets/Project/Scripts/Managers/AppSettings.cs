@@ -36,7 +36,7 @@ public class AppSettings : OGSingleton<AppSettings>
     public void ToggleTobii(bool _useTobii)
     {
         useTobii = _useTobii;
-        print(useTobii);
+
         if (useTobii)
             OGInput.instance.SetupTobii();
         else
@@ -56,7 +56,7 @@ public class AppSettings : OGSingleton<AppSettings>
     public void ToggleSound(bool _soundOn)
     {
         soundOn = _soundOn;
-        AudioListener.volume = (soundOn) ? 0.0f : 1.0f;
+        AudioListener.volume = (soundOn) ? 1.0f : 0.0f;
     }
 
     public void ToggleEyeMenus(bool _eyeMenus, EyeCaster eyeCaster)
